@@ -1,0 +1,17 @@
+# Error estimates
+:nonlinear: nonlinear/
+
+## Plot of the error estimates
+
+image::{nonlinear}FEM-Corr_case6_v1_param1.png[width=600.0,height=150.0]
+
+## Gains (1 set of parameters)
+
+Degree : 1, 2, 3
+
+[cols="a,a,a"]
+|===
+|image::{nonlinear}Tab_case6_v1_param1_degree1.png[width=640.0,height=500.0]
+|image::{nonlinear}Tab_case6_v1_param1_degree2.png[width=640.0,height=500.0]
+|image::{nonlinear}Tab_case6_v1_param1_degree3.png[width=640.0,height=500.0]
+|===

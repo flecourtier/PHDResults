@@ -6,7 +6,8 @@
 ** xref:meshfromnet/testcase1v1_2D/mesh2.adoc[Results - Mesh 2]
 
 .xref:nonlinear.adoc[Non linear problems]
-* xref:nonlinear/start.adoc[Start]
+* xref:nonlinear/testcase.adoc[TestCase]
+* xref:nonlinear/cvg.adoc[Error estimates]
 
 .xref:runtime.adoc[Execution time]
 * xref:runtime/start.adoc[Start]
