@@ -1,0 +1,18 @@
+# Results with mesh 1 - Testcase 1 - Version 4 - 2D
+:meshfromnet: meshfromnet/
+
+## Creation of the mesh size function from residual
+
+image::{meshfromnet}Res_case1_v4_param1_degree1_meshfromnet1.png[width=1200.0,height=300.0]
+
+## Construction of the mesh
+
+image::{meshfromnet}Mesh_plot_case1_v4_meshfromnet1.png[width=400.0,height=300.0]
+
+## Comparison of the additive approach with classical and meshfromnet meshes
+
+image::{meshfromnet}Error_plot_case1_v4_param1_degree1_meshfromnet1.png[width=300.0,height=300.0]
+
+## Plot of the additive solution (meshfromnet)
+
+image::{meshfromnet}Corr_plot_case1_v4_param1_degree1_meshfromnet1.png[width=680.0,height=340.0]
