@@ -1,5 +1,11 @@
 # PHD Results
 
+by Frédérique Lecourtier
+
 ## Mesh from network
 
-by Frédérique Lecourtier
+## Non linear problems
+
+## Execution time
+
+## Learning levelset functions

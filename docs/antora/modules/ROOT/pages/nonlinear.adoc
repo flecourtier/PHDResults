@@ -1,0 +1,4 @@
+:stem: latexmath
+# Non linear problems
+
+by Frédérique Lecourtier

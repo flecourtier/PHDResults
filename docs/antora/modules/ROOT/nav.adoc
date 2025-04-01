@@ -4,3 +4,12 @@
 * xref:meshfromnet/testcase1v1_2D/testcase1v1_2D.adoc[Testcase 1 - Version 1 - 2D]
 ** xref:meshfromnet/testcase1v1_2D/mesh1.adoc[Results - Mesh 1]
 ** xref:meshfromnet/testcase1v1_2D/mesh2.adoc[Results - Mesh 2]
+
+.xref:nonlinear.adoc[Non linear problems]
+* xref:nonlinear/start.adoc[Start]
+
+.xref:runtime.adoc[Execution time]
+* xref:runtime/start.adoc[Start]
+
+.xref:levelset.adoc[Learning levelset functions]
+* xref:levelset/start.adoc[Start]
