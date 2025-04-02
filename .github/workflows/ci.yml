@@ -34,7 +34,7 @@ jobs:
     - name: Build
       run: |
         python3 -m pip install --upgrade pip
-        npm install
+        npm install --no-audit --no-fund
         npm run antora
       working-directory: docs/antora
     - name: Deploy
