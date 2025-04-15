@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Results with mesh 1 - Testcase 1 - Version 4 - 2D :: PhiFEM Project - Docs</title>
-    <link rel="canonical" href="https://flecourtier.github.io/PHDResults/phifem_project/1.0.3/meshfromnet/testcase1v4_2D/mesh1.html">
+    <title>Error estimates :: PhiFEM Project - Docs</title>
+    <link rel="canonical" href="https://flecourtier.github.io/PHDResults/phifem_project/1.0.3/meshfromnet/testcase1v4_2D/refinement.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="icon" href="../../../../_/img/favicon.ico" type="image/x-icon">
@@ -104,7 +104,7 @@
     <a class="nav-link" href="testcase.html">Testcase 1 - Version 4 - 2D</a>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="mesh1.html">Results - Mesh 1</a>
+    <a class="nav-link" href="refinement.html">Results - Rafinement</a>
   </li>
 </ul>
   </li>
@@ -171,7 +171,7 @@
     <li><a href="../../main_page.html">Phi-FEM PhD</a></li>
     <li><a href="../../meshfromnet.html">Mesh from network</a></li>
     <li><a href="testcase.html">Testcase 1 - Version 4 - 2D</a></li>
-    <li><a href="mesh1.html">Results - Mesh 1</a></li>
+    <li><a href="refinement.html">Results - Rafinement</a></li>
   </ul>
 </nav>
 
@@ -198,7 +198,7 @@
 
     <a href="https://github.com/flecourtier/PHDResults">Open repository <i class="fab fa-github"></i></a>
     
-  <a href="https://github.com/flecourtier/PHDResults/edit/main/docs/antora/modules/ROOT/pages/meshfromnet/testcase1v4_2D/mesh1.adoc">Edit this Page <i class="fas fa-edit"></i></a>
+  <a href="https://github.com/flecourtier/PHDResults/edit/main/docs/antora/modules/ROOT/pages/meshfromnet/testcase1v4_2D/refinement.adoc">Edit this Page <i class="fas fa-edit"></i></a>
 
     <a href="https://github.com/feelpp/book.feelpp.org/issues/new">Open issue <i class="fas fa-lightbulb"></i></a>
 
@@ -228,43 +228,327 @@ title="Fullscreen mode"
 </aside>
 
 <article class="doc">
-<h1 class="page">Results with mesh 1 - Testcase 1 - Version 4 - 2D</h1>
+<h1 class="page">Error estimates</h1>
 <div class="sect1">
-<h2 id="_creation_of_the_mesh_size_function_from_residual"><a class="anchor" href="#_creation_of_the_mesh_size_function_from_residual"></a>1. Creation of the mesh size function from residual</h2>
+<h2 id="_marquage"><a class="anchor" href="#_marquage"></a>1. Marquage</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FEM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ADD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ADDNET</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Iteration 1:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshes/mesh_1.png" alt="mesh 1" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshesadd/mesh_1.png" alt="mesh 1" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshesaddnet/mesh_1.png" alt="mesh 1" width="640.0" height="500.0">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Iteration 2:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshes/mesh_2.png" alt="mesh 2" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshesadd/mesh_2.png" alt="mesh 2" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshesaddnet/mesh_2.png" alt="mesh 2" width="640.0" height="500.0">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Iteration 3:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshes/mesh_3.png" alt="mesh 3" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshesadd/mesh_3.png" alt="mesh 3" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshesaddnet/mesh_3.png" alt="mesh 3" width="640.0" height="500.0">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Iteration 4:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshes/mesh_4.png" alt="mesh 4" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshesadd/mesh_4.png" alt="mesh 4" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshesaddnet/mesh_4.png" alt="mesh 4" width="640.0" height="500.0">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Iteration 5:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshes/mesh_5.png" alt="mesh 5" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshesadd/mesh_5.png" alt="mesh 5" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshesaddnet/mesh_5.png" alt="mesh 5" width="640.0" height="500.0">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Iteration 6:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshes/mesh_6.png" alt="mesh 6" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshesadd/mesh_6.png" alt="mesh 6" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshesaddnet/mesh_6.png" alt="mesh 6" width="640.0" height="500.0">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Iteration 7:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshes/mesh_7.png" alt="mesh 7" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshesadd/mesh_7.png" alt="mesh 7" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshesaddnet/mesh_7.png" alt="mesh 7" width="640.0" height="500.0">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Iteration 8:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshes/mesh_8.png" alt="mesh 8" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshesadd/mesh_8.png" alt="mesh 8" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshesaddnet/mesh_8.png" alt="mesh 8" width="640.0" height="500.0">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Iteration 9:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshes/mesh_9.png" alt="mesh 9" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Iteration 10:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshes/mesh_10.png" alt="mesh 10" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Iteration 11:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/meshrefinement/meshes/mesh_10.png" alt="mesh 10" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_convergence"><a class="anchor" href="#_convergence"></a>2. Convergence</h2>
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="../../_images/meshfromnet/Res_case1_v4_param1_degree1_meshfromnet1.png" alt="Res case1 v4 param1 degree1 meshfromnet1" width="1200.0" height="300.0">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_construction_of_the_mesh"><a class="anchor" href="#_construction_of_the_mesh"></a>2. Construction of the mesh</h2>
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="../../_images/meshfromnet/Mesh_plot_case1_v4_meshfromnet1.png" alt="Mesh plot case1 v4 meshfromnet1" width="400.0" height="300.0">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_comparison_of_the_additive_approach_with_classical_and_meshfromnet_meshes"><a class="anchor" href="#_comparison_of_the_additive_approach_with_classical_and_meshfromnet_meshes"></a>3. Comparison of the additive approach with classical and meshfromnet meshes</h2>
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="../../_images/meshfromnet/Error_plot_case1_v4_param1_degree1_meshfromnet1.png" alt="Error plot case1 v4 param1 degree1 meshfromnet1" width="300.0" height="300.0">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_plot_of_the_additive_solution_meshfromnet"><a class="anchor" href="#_plot_of_the_additive_solution_meshfromnet"></a>4. Plot of the additive solution (meshfromnet)</h2>
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="../../_images/meshfromnet/Corr_plot_case1_v4_param1_degree1_meshfromnet1.png" alt="Corr plot case1 v4 param1 degree1 meshfromnet1" width="680.0" height="340.0">
+<img src="../../_images/meshrefinement/cvg.png" alt="cvg" width="640.0" height="500.0">
 </div>
 </div>
 </div>
