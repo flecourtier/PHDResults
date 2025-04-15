@@ -1,0 +1,117 @@
+# Error estimates
+:fem: meshrefinement/meshes/
+:add: meshrefinement/meshesadd/
+:addnet: meshrefinement/meshesaddnet/
+
+## Marquage
+
+[cols="c,c,c"]
+|===
+|FEM
+|ADD
+|ADDNET
+|===
+
+Iteration 1:
+
+[cols="a,a,a"]
+|===
+|image::{fem}mesh_1.png[width=640.0,height=500.0]
+|image::{add}mesh_1.png[width=640.0,height=500.0]
+|image::{addnet}mesh_1.png[width=640.0,height=500.0]
+|===
+
+Iteration 2:
+
+[cols="a,a,a"]
+|===
+|image::{fem}mesh_2.png[width=640.0,height=500.0]
+|image::{add}mesh_2.png[width=640.0,height=500.0]
+|image::{addnet}mesh_2.png[width=640.0,height=500.0]
+|===
+
+Iteration 3:
+
+[cols="a,a,a"]
+|===
+|image::{fem}mesh_3.png[width=640.0,height=500.0]
+|image::{add}mesh_3.png[width=640.0,height=500.0]
+|image::{addnet}mesh_3.png[width=640.0,height=500.0]
+|===
+
+Iteration 4:
+
+[cols="a,a,a"]
+|===
+|image::{fem}mesh_4.png[width=640.0,height=500.0]
+|image::{add}mesh_4.png[width=640.0,height=500.0]
+|image::{addnet}mesh_4.png[width=640.0,height=500.0]
+|===
+
+Iteration 5:
+
+[cols="a,a,a"]
+|===
+|image::{fem}mesh_5.png[width=640.0,height=500.0]
+|image::{add}mesh_5.png[width=640.0,height=500.0]
+|image::{addnet}mesh_5.png[width=640.0,height=500.0]
+|===
+
+Iteration 6:
+
+[cols="a,a,a"]
+|===
+|image::{fem}mesh_6.png[width=640.0,height=500.0]
+|image::{add}mesh_6.png[width=640.0,height=500.0]
+|image::{addnet}mesh_6.png[width=640.0,height=500.0]
+|===
+
+Iteration 7:
+
+[cols="a,a,a"]
+|===
+|image::{fem}mesh_7.png[width=640.0,height=500.0]
+|image::{add}mesh_7.png[width=640.0,height=500.0]
+|image::{addnet}mesh_7.png[width=640.0,height=500.0]
+|===
+
+Iteration 8:
+
+[cols="a,a,a"]
+|===
+|image::{fem}mesh_8.png[width=640.0,height=500.0]
+|image::{add}mesh_8.png[width=640.0,height=500.0]
+|image::{addnet}mesh_8.png[width=640.0,height=500.0]
+|===
+
+Iteration 9:
+
+[cols="a,a,a"]
+|===
+|image::{fem}mesh_9.png[width=640.0,height=500.0]
+|
+|
+|===
+
+Iteration 10:
+
+[cols="a,a,a"]
+|===
+|image::{fem}mesh_10.png[width=640.0,height=500.0]
+|
+|
+|===
+
+
+Iteration 11:
+
+[cols="a,a,a"]
+|===
+|image::{fem}mesh_10.png[width=640.0,height=500.0]
+|
+|
+|===
+
+## Convergence
+
+image::meshrefinement/cvg.png[width=640.0,height=500.0]

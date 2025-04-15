@@ -20,4 +20,4 @@ On considèrera pour ce cas test la solution analytique stem:[u_{ex}] défini pa
 ++++
 u_{ex}(x,y)=\exp\left(-\frac{(x-\mu_1)^2+(y-\mu_2)^2}{2\sigma^2}\right)\sin(2x)\sin(2y)
 ++++
-homogène sur stem:[\Omega] avec stem:[\sigma=0.2] et stem:[\mu_1,\mu_2\sim\mathcal{U}(-0.5, 0.5)].
+homogène sur stem:[\Omega] avec stem:[\sigma=0.15] et stem:[\mu_1,\mu_2\sim\mathcal{U}(-0.5, 0.5)].
