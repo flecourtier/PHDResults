@@ -1,3 +1,9 @@
 # Convergence
 
-image::adaptmesh/testcase1_version4/meshrefinement/cvg.png[width=640.0,height=500.0]
+## Norme L2
+
+image::adaptmesh/testcase1_version4/meshrefinement/normL2/convergence_L2.png[width=640.0,height=500.0]
+
+## Semi-norme H1
+
+image::adaptmesh/testcase1_version4/meshrefinement/normH1/convergence_H1.png[width=640.0,height=500.0]

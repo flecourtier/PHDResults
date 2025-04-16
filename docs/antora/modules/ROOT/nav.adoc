@@ -6,7 +6,8 @@
 ** xref:adaptmesh/testcase1v1_2D/mesh2.adoc[Meshfromnet - Mesh 2]
 * xref:adaptmesh/testcase1v4_2D/testcase.adoc[Testcase 1 - Version 4 - 2D]
 ** xref:adaptmesh/testcase1v4_2D/refinement.adoc[Meshrefinement]
-*** xref:adaptmesh/testcase1v4_2D/meshrefinement/marking.adoc[Marking]
+*** xref:adaptmesh/testcase1v4_2D/meshrefinement/markingL2.adoc[Marking - L2]
+*** xref:adaptmesh/testcase1v4_2D/meshrefinement/markingH1.adoc[Marking - H1]
 *** xref:adaptmesh/testcase1v4_2D/meshrefinement/cvg.adoc[Convergence]
 
 .xref:nonlinear.adoc[Non linear problems]
