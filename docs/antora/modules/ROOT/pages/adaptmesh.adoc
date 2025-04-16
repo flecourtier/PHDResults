@@ -1,0 +1,8 @@
+:stem: latexmath
+# Adaptive mesh
+
+On considère deux types de maillage
+
+* **meshfromnet** : maillage construit à partir d'une carte d'erreur résiduel du réseau
+* **meshrefinement** : raffinement de maillage (différentes méthodes)
+by Frédérique Lecourtier

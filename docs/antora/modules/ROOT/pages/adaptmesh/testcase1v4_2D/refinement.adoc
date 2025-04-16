@@ -1,0 +1,42 @@
+# Mesh refinement
+
+## FEM standard
+
+On considère ici l'estimateur résiduel local (pour le problème de Poisson considéré) défini par
+
+[stem]
+++++
+\eta_{res,T}^2 = h_T^2 \|R\|_{L^2(T)}^2 + \frac{1}{2} \sum_{E \in \partial T} h_E \|J\|_{L^2(E)}^2
+++++
+
+pour un élément T du maillage et où stem:[R] est le résidu du problème de Poisson et stem:[J] le saut de la solution entre deux éléments adjacents. Autrement dit, si stem:[u_h] est la solution approchée du problème de Poisson par une méthode EF, on a, pour un couple stem:[(u_h,f_h)] :
+
+[stem]
+++++
+R = \Delta u_h + f_h \quad \text{ et } \quad J = [\nabla u_h \cdot n]
+++++
+
+## Approche additive
+
+Dans le contexte de l'approche additive, on va tester différentes  stratégies :
+
+* 1ère stratégie (sol) : stem:[(u_h^{+}, f_h)] 
+
+[stem]
+++++
+R = \Delta u_h^{+} + f_h \quad \text{ et } \quad J = [\nabla u_h^{+} \cdot n]
+++++
+
+* 2ème stratégie (corr) : stem:[(p_h^{+},f_h + \Delta u_\theta)]
+
+[stem]
+++++
+R = \Delta p_h^{+} + \big(f_h + \Delta u_\theta\big) \quad \text{ et } \quad J = [\nabla p_h^{+} \cdot n]
+++++
+
+* 3ème stratégie (net) : stem:[(I_h u_\theta,f_h)]
+
+[stem]
+++++
+R = \Delta I_h u_\theta + f_h \quad \text{ et } \quad J = [\nabla I_h u_\theta \cdot n]
+++++

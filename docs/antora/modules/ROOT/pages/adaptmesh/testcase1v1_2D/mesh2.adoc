@@ -1,5 +1,5 @@
 # Results with mesh 2 - Testcase 1 - Version 1 - 2D
-:meshfromnet: meshfromnet/
+:meshfromnet: adaptmesh/testcase1_version1/meshfromnet/
 
 ## Creation of the mesh size function from residual
 
