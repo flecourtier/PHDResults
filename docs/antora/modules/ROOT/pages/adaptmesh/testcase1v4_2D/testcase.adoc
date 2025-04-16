@@ -26,3 +26,4 @@ homogène sur stem:[\Omega] avec stem:[\sigma=0.15] et stem:[\mu_1,\mu_2\sim\mat
 
 ## PINN
 
+image::adaptmesh/testcase1_version4/test_fe1_v4_training.png[width=640.0,height=500.0]
