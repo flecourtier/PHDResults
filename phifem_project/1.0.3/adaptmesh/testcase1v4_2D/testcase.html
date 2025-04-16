@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Results with mesh 1 - Testcase 1 - Version 1 - 2D :: PhiFEM Project - Docs</title>
-    <link rel="canonical" href="https://flecourtier.github.io/PHDResults/phifem_project/1.0.3/meshfromnet/testcase1v1_2D/mesh1.html">
+    <title>Cas test : Carré + Poisson + Dirichlet (gaussienne piquée) :: PhiFEM Project - Docs</title>
+    <link rel="canonical" href="https://flecourtier.github.io/PHDResults/phifem_project/1.0.3/adaptmesh/testcase1v4_2D/testcase.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="icon" href="../../../../_/img/favicon.ico" type="image/x-icon">
@@ -85,26 +85,35 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../meshfromnet.html">Mesh from network</a>
+    <a class="nav-link" href="../../adaptmesh.html">Adaptive mesh</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="testcase1v1_2D.html">Testcase 1 - Version 1 - 2D</a>
+    <a class="nav-link" href="../testcase1v1_2D/testcase1v1_2D.html">Testcase 1 - Version 1 - 2D</a>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="mesh1.html">Results - Mesh 1</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../testcase1v1_2D/mesh1.html">Meshfromnet - Mesh 1</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="mesh2.html">Results - Mesh 2</a>
+    <a class="nav-link" href="../testcase1v1_2D/mesh2.html">Meshfromnet - Mesh 2</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../testcase1v4_2D/testcase.html">Testcase 1 - Version 4 - 2D</a>
+    <a class="nav-link" href="testcase.html">Testcase 1 - Version 4 - 2D</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../testcase1v4_2D/refinement.html">Results - Rafinement</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="refinement.html">Meshrefinement</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="meshrefinement/marking.html">Marking</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="meshrefinement/cvg.html">Convergence</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -169,9 +178,8 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../main_page.html">Phi-FEM PhD</a></li>
-    <li><a href="../../meshfromnet.html">Mesh from network</a></li>
-    <li><a href="testcase1v1_2D.html">Testcase 1 - Version 1 - 2D</a></li>
-    <li><a href="mesh1.html">Results - Mesh 1</a></li>
+    <li><a href="../../adaptmesh.html">Adaptive mesh</a></li>
+    <li><a href="testcase.html">Testcase 1 - Version 4 - 2D</a></li>
   </ul>
 </nav>
 
@@ -198,7 +206,7 @@
 
     <a href="https://github.com/flecourtier/PHDResults">Open repository <i class="fab fa-github"></i></a>
     
-  <a href="https://github.com/flecourtier/PHDResults/edit/main/docs/antora/modules/ROOT/pages/meshfromnet/testcase1v1_2D/mesh1.adoc">Edit this Page <i class="fas fa-edit"></i></a>
+  <a href="https://github.com/flecourtier/PHDResults/edit/main/docs/antora/modules/ROOT/pages/adaptmesh/testcase1v4_2D/testcase.adoc">Edit this Page <i class="fas fa-edit"></i></a>
 
     <a href="https://github.com/feelpp/book.feelpp.org/issues/new">Open issue <i class="fas fa-lightbulb"></i></a>
 
@@ -228,45 +236,43 @@ title="Fullscreen mode"
 </aside>
 
 <article class="doc">
-<h1 class="page">Results with mesh 1 - Testcase 1 - Version 1 - 2D</h1>
+<h1 class="page">Cas test : Carré + Poisson + Dirichlet (gaussienne piquée)</h1>
 <div class="sect1">
-<h2 id="_creation_of_the_mesh_size_function_from_residual"><a class="anchor" href="#_creation_of_the_mesh_size_function_from_residual"></a>1. Creation of the mesh size function from residual</h2>
+<h2 id="_présentation"><a class="anchor" href="#_présentation"></a>1. Présentation</h2>
 <div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="../../_images/meshfromnet/Res_case1_v1_param1_degree1_meshfromnet1.png" alt="Res case1 v1 param1 degree1 meshfromnet1" width="1200.0" height="300.0">
+<div class="paragraph">
+<p>On considère le problème de Poisson avec condition de Dirichlet défini par</p>
 </div>
+<div class="stemblock">
+<div class="content">
+\[\left\{
+\begin{aligned}
+-\Delta u &amp;= f, \; &amp;&amp;\text{dans } \; \Omega, \\
+u&amp;=0, \; &amp;&amp;\text{sur } \; \Gamma.
+\end{aligned}
+\right.\]
+</div>
+</div>
+<div class="paragraph">
+<p>avec \(\Omega = [-0.5 \pi, 0.5 \pi]^2\).</p>
+</div>
+<div class="paragraph">
+<p>On considèrera pour ce cas test la solution analytique \(u_{ex}\) défini par</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[u_{ex}(x,y)=\exp\left(-\frac{(x-\mu_1)^2+(y-\mu_2)^2}{2\sigma^2}\right)\sin(2x)\sin(2y)\]
+</div>
+</div>
+<div class="paragraph">
+<p>homogène sur \(\Omega\) avec \(\sigma=0.15\) et \(\mu_1,\mu_2\sim\mathcal{U}(-0.5, 0.5)\).</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_construction_of_the_mesh"><a class="anchor" href="#_construction_of_the_mesh"></a>2. Construction of the mesh</h2>
+<h2 id="_pinn"><a class="anchor" href="#_pinn"></a>2. PINN</h2>
 <div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="../../_images/meshfromnet/Mesh_plot_case1_v1_meshfromnet1.png" alt="Mesh plot case1 v1 meshfromnet1" width="400.0" height="300.0">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_comparison_of_the_additive_approach_with_classical_and_meshfromnet_meshes"><a class="anchor" href="#_comparison_of_the_additive_approach_with_classical_and_meshfromnet_meshes"></a>3. Comparison of the additive approach with classical and meshfromnet meshes</h2>
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="../../_images/meshfromnet/Error_plot_case1_v1_param1_degree1_meshfromnet1.png" alt="Error plot case1 v1 param1 degree1 meshfromnet1" width="300.0" height="300.0">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_plot_of_the_additive_solution_meshfromnet"><a class="anchor" href="#_plot_of_the_additive_solution_meshfromnet"></a>4. Plot of the additive solution (meshfromnet)</h2>
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="../../_images/meshfromnet/Corr_plot_case1_v1_param1_degree1_meshfromnet1.png" alt="Corr plot case1 v1 param1 degree1 meshfromnet1" width="680.0" height="340.0">
-</div>
-</div>
+
 </div>
 </div>
 </article>

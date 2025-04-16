@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Mesh from network :: PhiFEM Project - Docs</title>
-    <link rel="canonical" href="https://flecourtier.github.io/PHDResults/phifem_project/1.0.3/meshfromnet.html">
+    <title>Cas test 1 : Carré + Poisson + Dirichlet (basse fréquence) :: PhiFEM Project - Docs</title>
+    <link rel="canonical" href="https://flecourtier.github.io/PHDResults/phifem_project/1.0.3/adaptmesh/testcase1v1_2D/testcase1v1_2D.html">
     <meta name="generator" content="Antora 3.1.2">
-    <link rel="stylesheet" href="../../_/css/site.css">
-    <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <link rel="icon" href="../../../../_/img/favicon.ico" type="image/x-icon">
     <script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
 
     <link rel="stylesheet" type="text/css" href="/_/css/style.css">
@@ -15,7 +15,7 @@
 
 
 
-<script>var uiRootPath = '../../_'</script>
+<script>var uiRootPath = '../../../../_'</script>
 
   </head>
   <body class="article">
@@ -65,11 +65,11 @@
         </div>
         <div class="navbar-item">
           <a class="navbar-brand" href="https://mimesis.inria.fr/">
-            <img src="../../_/img/mimesis2.png" alt="mimesis" style="width:90px;"></a>
+            <img src="../../../../_/img/mimesis2.png" alt="mimesis" style="width:90px;"></a>
         </div>
         <div class="navbar-item">
           <a class="navbar-brand" href="https://www.inria.fr/fr">
-            <img src="../../_/img/inria.png" alt="inria" style="width:90px;"></a>
+            <img src="../../../../_/img/inria.png" alt="inria" style="width:90px;"></a>
         </div>
       </div>
     </div>
@@ -81,30 +81,39 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="main_page.html">Phi-FEM PhD</a></h3>
+    <h3 class="title"><a href="../../main_page.html">Phi-FEM PhD</a></h3>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="0">
+  <li class="nav-item" data-depth="0">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="meshfromnet.html">Mesh from network</a>
+    <a class="nav-link" href="../../adaptmesh.html">Adaptive mesh</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="meshfromnet/testcase1v1_2D/testcase1v1_2D.html">Testcase 1 - Version 1 - 2D</a>
+    <a class="nav-link" href="testcase1v1_2D.html">Testcase 1 - Version 1 - 2D</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="meshfromnet/testcase1v1_2D/mesh1.html">Results - Mesh 1</a>
+    <a class="nav-link" href="mesh1.html">Meshfromnet - Mesh 1</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="meshfromnet/testcase1v1_2D/mesh2.html">Results - Mesh 2</a>
+    <a class="nav-link" href="mesh2.html">Meshfromnet - Mesh 2</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="meshfromnet/testcase1v4_2D/testcase.html">Testcase 1 - Version 4 - 2D</a>
+    <a class="nav-link" href="../testcase1v4_2D/testcase.html">Testcase 1 - Version 4 - 2D</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="meshfromnet/testcase1v4_2D/refinement.html">Results - Rafinement</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../testcase1v4_2D/refinement.html">Meshrefinement</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../testcase1v4_2D/meshrefinement/marking.html">Marking</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../testcase1v4_2D/meshrefinement/cvg.html">Convergence</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -112,31 +121,31 @@
   </li>
   <li class="nav-item" data-depth="0">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="nonlinear.html">Non linear problems</a>
+    <a class="nav-link" href="../../nonlinear.html">Non linear problems</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="nonlinear/testcase.html">TestCase</a>
+    <a class="nav-link" href="../../nonlinear/testcase.html">TestCase</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="nonlinear/cvg.html">Error estimates</a>
+    <a class="nav-link" href="../../nonlinear/cvg.html">Error estimates</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="0">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="runtime.html">Execution time</a>
+    <a class="nav-link" href="../../runtime.html">Execution time</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="runtime/start.html">Start</a>
+    <a class="nav-link" href="../../runtime/start.html">Start</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="0">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="levelset.html">Learning levelset functions</a>
+    <a class="nav-link" href="../../levelset.html">Learning levelset functions</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="levelset/start.html">Start</a>
+    <a class="nav-link" href="../../levelset/start.html">Start</a>
   </li>
 </ul>
   </li>
@@ -150,10 +159,10 @@
   </div>
   <ul class="components">
     <li class="component is-current">
-      <a class="title" href="main_page.html">Phi-FEM PhD</a>
+      <a class="title" href="../../main_page.html">Phi-FEM PhD</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="main_page.html">1.0.3</a>
+          <a href="../../main_page.html">1.0.3</a>
         </li>
       </ul>
     </li>
@@ -165,11 +174,12 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="main_page.html" class="home-link"></a>
+  <a href="../../main_page.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="main_page.html">Phi-FEM PhD</a></li>
-    <li><a href="meshfromnet.html">Mesh from network</a></li>
+    <li><a href="../../main_page.html">Phi-FEM PhD</a></li>
+    <li><a href="../../adaptmesh.html">Adaptive mesh</a></li>
+    <li><a href="testcase1v1_2D.html">Testcase 1 - Version 1 - 2D</a></li>
   </ul>
 </nav>
 
@@ -196,7 +206,7 @@
 
     <a href="https://github.com/flecourtier/PHDResults">Open repository <i class="fab fa-github"></i></a>
     
-  <a href="https://github.com/flecourtier/PHDResults/edit/main/docs/antora/modules/ROOT/pages/meshfromnet.adoc">Edit this Page <i class="fas fa-edit"></i></a>
+  <a href="https://github.com/flecourtier/PHDResults/edit/main/docs/antora/modules/ROOT/pages/adaptmesh/testcase1v1_2D/testcase1v1_2D.adoc">Edit this Page <i class="fas fa-edit"></i></a>
 
     <a href="https://github.com/feelpp/book.feelpp.org/issues/new">Open issue <i class="fas fa-lightbulb"></i></a>
 
@@ -226,16 +236,45 @@ title="Fullscreen mode"
 </aside>
 
 <article class="doc">
-<h1 class="page">Mesh from network</h1>
+<h1 class="page">Cas test 1 : Carré + Poisson + Dirichlet (basse fréquence)</h1>
 <div class="paragraph">
-<p>by Frédérique Lecourtier</p>
+<p>On considère le problème de Poisson avec condition de Dirichlet défini par</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\left\{
+\begin{aligned}
+-\Delta u &amp;= f, \; &amp;&amp;\text{dans } \; \Omega, \\
+u&amp;=g, \; &amp;&amp;\text{sur } \; \Gamma.
+\end{aligned}
+\right.\]
+</div>
+</div>
+<div class="paragraph">
+<p>On définit \(\Omega\) comme étant le carré défini par</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\Omega=[-0.5 \pi, 0.5 \pi]^2\]
+</div>
+</div>
+<div class="paragraph">
+<p>On considèrera pour ce cas test la solution analytique \(u_{ex}\) défini par</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[u_{ex}(x,y)=\exp(-((x-\mu_1)^2+(y-\mu_2)^2)/2)\times\sin(2x)\times\sin(2y)\]
+</div>
+</div>
+<div class="paragraph">
+<p>homogène sur \(\Omega\) (\(g=0\)) et \(\mu_1,\mu_2\sim\mathcal{U}(-0.5, 0.5)\).</p>
 </div>
 </article>
   </div>
 </main>
 </div>
-<script src="../../_/js/site.js"></script>
-<script src="../../_/js/vendor/highlight.js"></script>
+<script src="../../../../_/js/site.js"></script>
+<script src="../../../../_/js/vendor/highlight.js"></script>
 <script>hljs.initHighlighting()</script>
 <script src="/_/js/clipboard.min.js"></script>
 <script>new ClipboardJS('.btn');</script>
