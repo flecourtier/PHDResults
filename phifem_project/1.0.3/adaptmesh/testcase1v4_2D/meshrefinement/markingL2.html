@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Marquage des cellules (L2) :: PhiFEM Project - Docs</title>
+    <link rel="canonical" href="https://flecourtier.github.io/PHDResults/phifem_project/1.0.3/adaptmesh/testcase1v4_2D/meshrefinement/markingL2.html">
+    <meta name="generator" content="Antora 3.1.2">
+    <link rel="stylesheet" href="../../../../../_/css/site.css">
+    <link rel="icon" href="../../../../../_/img/favicon.ico" type="image/x-icon">
+    <script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
+
+    <link rel="stylesheet" type="text/css" href="/_/css/style.css">
+
+
+
+
+<script>var uiRootPath = '../../../../../_'</script>
+
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a href="https://flecourtier.github.io/PHDResults">PhiFEM Project - Docs</a>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Project</div>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>GitHub</strong></div>
+            <a class="navbar-item" href="https://github.com/master-csmi/2022-m2-phifem">GitHub Repository</a>
+            <a class="navbar-item" href="https://github.com/orgs/master-csmi/projects/9/views/8">GitHub Issue Tracker</a>
+            <a class="navbar-item" href="https://master-csmi.github.io/2022-m2-phifem/phifem_project/1.0.3/">Project Report</a>
+            <hr class="navbar-divider">
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Internship</div>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>GitHub</strong></div>
+            <a class="navbar-item" href="https://github.com/flecourtier/phifem_stage">GitHub Repository</a>
+            <a class="navbar-item" href="https://flecourtier.github.io/phifem_stage/phifem_project/1.0.3/main_page.html">Internship report (PDF)</a>
+            <hr class="navbar-divider">
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">PhD</div>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>GitHub</strong></div>
+            <a class="navbar-item" href="https://github.com/flecourtier/these2023">GitHub Repository</a>
+            <a class="navbar-item" href="https://github.com/flecourtier/these2023/blob/main/docs/abstracts/abstracts.pdf">Weekly abstracts (PDF)</a>
+            <a class="navbar-item" href="https://github.com/flecourtier/these2023/tree/main/docs/meetings/meeting.pdf">Meetings (PDF)</a>
+            <a class="navbar-item" href="https://github.com/flecourtier/these2023/tree/main/docs/to_do_list/to_do_list.pdf">ToDo List (PDF)</a>
+            <hr class="navbar-divider">
+          </div>
+        </div>
+        <div class="navbar-item">
+          <a class="navbar-brand" href="https://mimesis.inria.fr/">
+            <img src="../../../../../_/img/mimesis2.png" alt="mimesis" style="width:90px;"></a>
+        </div>
+        <div class="navbar-item">
+          <a class="navbar-brand" href="https://www.inria.fr/fr">
+            <img src="../../../../../_/img/inria.png" alt="inria" style="width:90px;"></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="phifem_project" data-version="1.0.3">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../../main_page.html">Phi-FEM PhD</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../../adaptmesh.html">Adaptive mesh</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../testcase1v1_2D/testcase1v1_2D.html">Testcase 1 - Version 1 - 2D</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../testcase1v1_2D/mesh1.html">Meshfromnet - Mesh 1</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../testcase1v1_2D/mesh2.html">Meshfromnet - Mesh 2</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../testcase.html">Testcase 1 - Version 4 - 2D</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../refinement.html">Meshrefinement</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="markingL2.html">Marking - L2</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="markingH1.html">Marking - H1</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="cvg.html">Convergence</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../../nonlinear.html">Non linear problems</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../nonlinear/testcase.html">TestCase</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../nonlinear/cvg.html">Error estimates</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../../runtime.html">Execution time</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../runtime/start.html">Start</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../../levelset.html">Learning levelset functions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../levelset/start.html">Start</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Phi-FEM PhD</span>
+    <span class="version">1.0.3</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../../main_page.html">Phi-FEM PhD</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../../main_page.html">1.0.3</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../main_page.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../../main_page.html">Phi-FEM PhD</a></li>
+    <li><a href="../../../adaptmesh.html">Adaptive mesh</a></li>
+    <li><a href="../testcase.html">Testcase 1 - Version 4 - 2D</a></li>
+    <li><a href="../refinement.html">Meshrefinement</a></li>
+    <li><a href="markingL2.html">Marking - L2</a></li>
+  </ul>
+</nav>
+
+  
+<div class="dropdown">
+  <button class="dropbtn" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <div class="dropdown-content">
+
+
+          <a onclick="print(this)"  class="headerbtn"  data-toggle="tooltip" data-placement="left" title="Print to PDF">
+              .pdf <i class="fas fa-file-pdf"></i>
+          </a>
+
+  </div>
+</div>
+  
+<div class="dropdown">
+  <button class="dropbtn" aria-label="Github">
+    <i class="fab fa-github"></i>
+  </button>
+  <div class="dropdown-content">
+
+    <a href="https://github.com/flecourtier/PHDResults">Open repository <i class="fab fa-github"></i></a>
+    
+  <a href="https://github.com/flecourtier/PHDResults/edit/main/docs/antora/modules/ROOT/pages/adaptmesh/testcase1v4_2D/meshrefinement/markingL2.adoc">Edit this Page <i class="fas fa-edit"></i></a>
+
+    <a href="https://github.com/feelpp/book.feelpp.org/issues/new">Open issue <i class="fas fa-lightbulb"></i></a>
+
+
+  </div>
+</div>
+
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+</div>
+
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+
+<article class="doc">
+<h1 class="page">Marquage des cellules (L2)</h1>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FEM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ADD - Sol</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ADD - Corr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ADD - Net</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Iteration 1:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesfem/mesh_1.png" alt="mesh 1" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddsol/mesh_1.png" alt="mesh 1" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddcorr/mesh_1.png" alt="mesh 1" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddnet/mesh_1.png" alt="mesh 1" width="640.0" height="500.0">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Iteration 2:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesfem/mesh_2.png" alt="mesh 2" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddsol/mesh_2.png" alt="mesh 2" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddcorr/mesh_2.png" alt="mesh 2" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddnet/mesh_2.png" alt="mesh 2" width="640.0" height="500.0">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Iteration 3:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesfem/mesh_3.png" alt="mesh 3" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddsol/mesh_3.png" alt="mesh 3" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddcorr/mesh_3.png" alt="mesh 3" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddnet/mesh_3.png" alt="mesh 3" width="640.0" height="500.0">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Iteration 4:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesfem/mesh_4.png" alt="mesh 4" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddsol/mesh_4.png" alt="mesh 4" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddcorr/mesh_4.png" alt="mesh 4" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddnet/mesh_4.png" alt="mesh 4" width="640.0" height="500.0">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Iteration 5:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesfem/mesh_5.png" alt="mesh 5" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddsol/mesh_5.png" alt="mesh 5" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddcorr/mesh_5.png" alt="mesh 5" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddnet/mesh_5.png" alt="mesh 5" width="640.0" height="500.0">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Iteration 6:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesfem/mesh_6.png" alt="mesh 6" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddsol/mesh_6.png" alt="mesh 6" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddcorr/mesh_6.png" alt="mesh 6" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddnet/mesh_6.png" alt="mesh 6" width="640.0" height="500.0">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Iteration 7:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesfem/mesh_7.png" alt="mesh 7" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddsol/mesh_7.png" alt="mesh 7" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddcorr/mesh_7.png" alt="mesh 7" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddnet/mesh_7.png" alt="mesh 7" width="640.0" height="500.0">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Iteration 8:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesfem/mesh_8.png" alt="mesh 8" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddsol/mesh_8.png" alt="mesh 8" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddcorr/mesh_8.png" alt="mesh 8" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesaddnet/mesh_8.png" alt="mesh 8" width="640.0" height="500.0">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Iteration 9:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesfem/mesh_9.png" alt="mesh 9" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Iteration 10:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesfem/mesh_10.png" alt="mesh 10" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Iteration 11:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/meshesfem/mesh_10.png" alt="mesh 10" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</article>
+  </div>
+</main>
+</div>
+<script src="../../../../../_/js/site.js"></script>
+<script src="../../../../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+<script src="/_/js/clipboard.min.js"></script>
+<script>new ClipboardJS('.btn');</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+
+  TeX: {
+      Macros: {
+      RR: "{\\mathbb R}",
+      NN: "{\\mathbb N}",
+      Nso: "{N_{\\mathrm{so}}}",
+      Nma: "{N_{\\mathrm{ma}}}",
+      Nno: "{N_{\\mathrm{no}}}",
+      Ne: "{N_{\\mathrm{e}}}",
+      Ilag: ["{\\mathcal{I}^{\\mathrm{lag}}_{#1}}",1],
+      calTh: "{\\mathcal{T}_h}",
+      Ck: ["{\\mathcal{C}^{#1}}",1],
+      Pk: ["{\\mathcal{P}^{#1}}",1],
+      Qk: ["{\\mathcal{Q}^{#1}}",1],
+      Pch: ["{P^{#1}_{c,h}}",1],
+      Pcho: ["{P^{#1}_{c,h,0}}",1],
+      Qch: ["{Q^{#1}_{c,h}}",1],
+      Ich: ["{\\mathcal{I}^{#1}_{c,h}#2}",2],
+      poly: ["{\\mathbb{#1}}",1],
+      nf: "{n_f}",
+      normal: "{\\mathbf{n}}",
+      ngeo: "{n_{\\mathrm{geo}}}",
+      geo: "{\\mathrm{geo}}",
+      card: ["{\\operatorname{card}(#1)}",1],
+      dim: ["{\\operatorname{dim}(#1)}",1],
+      opdim: "{\\operatorname{dim}}",
+      card: ["{\\operatorname{card}(#1)}",1],
+      poly: ["{\\mathbb{#1}}",1],
+      R: ["{\\mathbb{R}^{#1}}",1],
+      set: ["{\\left\\{#1\\right\\}}",1],
+      diam: "{\\operatorname{diam}}",
+      jump: ["{[\\![ #1 ]\\!]}",1],
+      Next: "{\\mathrm{n}}",
+      essinf: "{\\operatorname{ess}\\, \\operatorname{inf}}",
+      tr: "{\\operatorname{tr}}",
+      Id: "{\\mathcal{I}}",
+      disp: ["{\\mathbf{#1}}",1],
+      stresst: ["{\\mathbf{\\sigma(#1)}}",1],
+      deformt: ["{\\mathbf{\\varepsilon(#1)}}",1],
+      domain: "{\\Omega}",
+      prect: ["{\\left\\(#1\\right\\)}",1],
+      ds: "",
+      bold: ["{\\bf #1}",1]
+  },
+  extensions: ["mhchem.js"] }
+});
+</script>
+<!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
+
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>-->
+  </body>
+</html>
