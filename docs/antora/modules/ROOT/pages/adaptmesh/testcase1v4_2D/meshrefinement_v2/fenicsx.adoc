@@ -1,0 +1,21 @@
+# Dérivées fenicsx
+
+Dans cette version, on évalue le laplacien du réseau directement avec fenicsx, sur les dofs P2 du maillage courrant.
+
+## Convergence en norme L2 + Ratio temps/erreur
+
+[cols="a,a"]
+|===
+|image::adaptmesh/testcase1_version4/meshrefinement_v2/fenicsx/cvg.png[width=640.0,height=500.0]
+|image::adaptmesh/testcase1_version4/meshrefinement_v2/fenicsx/times_errors.png[width=640.0,height=500.0]
+|===
+
+## Analyse des temps de calcul
+
+* FEM : EF (Interpolation de f / Assemblage du système linéaire / Résolution du système linéaire) / Calcul de l'estimateur / Marquage des cellules / Raffinement du maillage 
+
+* Add : EF (Interpolation de gradutheta / Dérives fenicsx / Interpolation de f / Assemblage du système linéaire / Résolution du système linéaire) / Calcul de l'estimateur / Marquage des cellules / Raffinement du maillage 
+
+* AddNet : Interpolation de laputheta / Dérives fenicsx / Interpolation de f / Calcul de l'estimateur / Marquage des cellules / Raffinement du maillage
+
+image::adaptmesh/testcase1_version4/meshrefinement_v2/fenicsx/times_ndofs.png[width=960.0,height=750.0]
