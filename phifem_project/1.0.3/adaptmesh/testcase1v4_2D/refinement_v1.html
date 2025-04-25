@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Mesh refinement :: PhiFEM Project - Docs</title>
-    <link rel="canonical" href="https://flecourtier.github.io/PHDResults/phifem_project/1.0.3/adaptmesh/testcase1v4_2D/refinement.html">
+    <title>Mesh refinement - 16/04/2025 :: PhiFEM Project - Docs</title>
+    <link rel="canonical" href="https://flecourtier.github.io/PHDResults/phifem_project/1.0.3/adaptmesh/testcase1v4_2D/refinement_v1.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="icon" href="../../../../_/img/favicon.ico" type="image/x-icon">
@@ -103,23 +103,35 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="testcase.html">Testcase 1 - Version 4 - 2D</a>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="meshfromnet.html">Meshfromnet</a>
+  </li>
   <li class="nav-item is-current-page" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="refinement.html">Meshrefinement</a>
+    <a class="nav-link" href="refinement_v1.html">Meshrefinement - 16/04/2025</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="meshrefinement/markingL2.html">Marking - L2</a>
+    <a class="nav-link" href="meshrefinement_v1/markingL2.html">Marking - L2</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="meshrefinement/markingH1.html">Marking - H1</a>
+    <a class="nav-link" href="meshrefinement_v1/markingH1.html">Marking - H1</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="meshrefinement/cvg.html">Convergence</a>
+    <a class="nav-link" href="meshrefinement_v1/cvg.html">Convergence</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="meshfromnet.html">Meshfromnet</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="refinement_v2.html">Meshrefinement - 30/04/2025</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="meshrefinement_v2/pytorch.html">Dérivées pytorch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="meshrefinement_v2/fenicsx.html">Dérivées fenicsx</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -186,7 +198,7 @@
     <li><a href="../../main_page.html">Phi-FEM PhD</a></li>
     <li><a href="../../adaptmesh.html">Adaptive mesh</a></li>
     <li><a href="testcase.html">Testcase 1 - Version 4 - 2D</a></li>
-    <li><a href="refinement.html">Meshrefinement</a></li>
+    <li><a href="refinement_v1.html">Meshrefinement - 16/04/2025</a></li>
   </ul>
 </nav>
 
@@ -213,7 +225,7 @@
 
     <a href="https://github.com/flecourtier/PHDResults">Open repository <i class="fab fa-github"></i></a>
     
-  <a href="https://github.com/flecourtier/PHDResults/edit/main/docs/antora/modules/ROOT/pages/adaptmesh/testcase1v4_2D/refinement.adoc">Edit this Page <i class="fas fa-edit"></i></a>
+  <a href="https://github.com/flecourtier/PHDResults/edit/main/docs/antora/modules/ROOT/pages/adaptmesh/testcase1v4_2D/refinement_v1.adoc">Edit this Page <i class="fas fa-edit"></i></a>
 
     <a href="https://github.com/feelpp/book.feelpp.org/issues/new">Open issue <i class="fas fa-lightbulb"></i></a>
 
@@ -243,16 +255,16 @@ title="Fullscreen mode"
 </aside>
 
 <article class="doc">
-<h1 class="page">Mesh refinement</h1>
+<h1 class="page">Mesh refinement - 16/04/2025</h1>
 <div class="sect1">
 <h2 id="_fem_standard"><a class="anchor" href="#_fem_standard"></a>1. FEM standard</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>On considère ici l&#8217;estimateur résiduel local (pour le problème de Poisson considéré) défini par</p>
+<p>On considère ici l&#8217;estimateur résiduel local (pour le problème de Poisson considéré) en norme L2  défini par</p>
 </div>
 <div class="stemblock">
 <div class="content">
-\[\eta_{res,T}^2 = h_T^2 \|R\|_{L^2(T)}^2 + \frac{1}{2} \sum_{E \in \partial T} h_E \|J\|_{L^2(E)}^2\]
+\[\eta_{res,T}^2 = h_T^4 \|R\|_{L^2(T)}^2 + \frac{1}{2} \sum_{E \in \partial T} h_E^2 \|J\|_{L^2(E)}^2\]
 </div>
 </div>
 <div class="paragraph">

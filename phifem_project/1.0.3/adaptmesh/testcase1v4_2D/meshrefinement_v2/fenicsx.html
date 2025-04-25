@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Convergence :: PhiFEM Project - Docs</title>
-    <link rel="canonical" href="https://flecourtier.github.io/PHDResults/phifem_project/1.0.3/adaptmesh/testcase1v4_2D/meshrefinement/cvg.html">
+    <title>Dérivées fenicsx :: PhiFEM Project - Docs</title>
+    <link rel="canonical" href="https://flecourtier.github.io/PHDResults/phifem_project/1.0.3/adaptmesh/testcase1v4_2D/meshrefinement_v2/fenicsx.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../../_/css/site.css">
     <link rel="icon" href="../../../../../_/img/favicon.ico" type="image/x-icon">
@@ -104,22 +104,34 @@
     <a class="nav-link" href="../testcase.html">Testcase 1 - Version 4 - 2D</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../meshfromnet.html">Meshfromnet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../refinement.html">Meshrefinement</a>
+    <a class="nav-link" href="../refinement_v1.html">Meshrefinement - 16/04/2025</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="markingL2.html">Marking - L2</a>
+    <a class="nav-link" href="../meshrefinement_v1/markingL2.html">Marking - L2</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="markingH1.html">Marking - H1</a>
+    <a class="nav-link" href="../meshrefinement_v1/markingH1.html">Marking - H1</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="3">
-    <a class="nav-link" href="cvg.html">Convergence</a>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../meshrefinement_v1/cvg.html">Convergence</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../meshfromnet.html">Meshfromnet</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../refinement_v2.html">Meshrefinement - 30/04/2025</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pytorch.html">Dérivées pytorch</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="fenicsx.html">Dérivées fenicsx</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -186,8 +198,8 @@
     <li><a href="../../../main_page.html">Phi-FEM PhD</a></li>
     <li><a href="../../../adaptmesh.html">Adaptive mesh</a></li>
     <li><a href="../testcase.html">Testcase 1 - Version 4 - 2D</a></li>
-    <li><a href="../refinement.html">Meshrefinement</a></li>
-    <li><a href="cvg.html">Convergence</a></li>
+    <li><a href="../refinement_v2.html">Meshrefinement - 30/04/2025</a></li>
+    <li><a href="fenicsx.html">Dérivées fenicsx</a></li>
   </ul>
 </nav>
 
@@ -214,7 +226,7 @@
 
     <a href="https://github.com/flecourtier/PHDResults">Open repository <i class="fab fa-github"></i></a>
     
-  <a href="https://github.com/flecourtier/PHDResults/edit/main/docs/antora/modules/ROOT/pages/adaptmesh/testcase1v4_2D/meshrefinement/cvg.adoc">Edit this Page <i class="fas fa-edit"></i></a>
+  <a href="https://github.com/flecourtier/PHDResults/edit/main/docs/antora/modules/ROOT/pages/adaptmesh/testcase1v4_2D/meshrefinement_v2/fenicsx.adoc">Edit this Page <i class="fas fa-edit"></i></a>
 
     <a href="https://github.com/feelpp/book.feelpp.org/issues/new">Open issue <i class="fas fa-lightbulb"></i></a>
 
@@ -244,23 +256,58 @@ title="Fullscreen mode"
 </aside>
 
 <article class="doc">
-<h1 class="page">Convergence</h1>
-<div class="sect1">
-<h2 id="_norme_l2"><a class="anchor" href="#_norme_l2"></a>1. Norme L2</h2>
+<h1 class="page">Dérivées fenicsx</h1>
+<div id="preamble">
 <div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normL2/convergence_L2.png" alt="convergence L2" width="640.0" height="500.0">
-</div>
+<div class="paragraph">
+<p>Dans cette version, on évalue le laplacien du réseau directement avec fenicsx, sur les dofs P2 du maillage courrant.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_semi_norme_h1"><a class="anchor" href="#_semi_norme_h1"></a>2. Semi-norme H1</h2>
+<h2 id="_convergence_en_norme_l2_ratio_tempserreur"><a class="anchor" href="#_convergence_en_norme_l2_ratio_tempserreur"></a>1. Convergence en norme L2 + Ratio temps/erreur</h2>
 <div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement_v2/fenicsx/cvg.png" alt="cvg" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement_v2/fenicsx/times_errors.png" alt="times errors" width="640.0" height="500.0">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_analyse_des_temps_de_calcul"><a class="anchor" href="#_analyse_des_temps_de_calcul"></a>2. Analyse des temps de calcul</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>FEM : EF (Interpolation de f / Assemblage du système linéaire / Résolution du système linéaire) / Calcul de l&#8217;estimateur / Marquage des cellules / Raffinement du maillage</p>
+</li>
+<li>
+<p>Add : EF (Interpolation de gradutheta / Dérives fenicsx / Interpolation de f / Assemblage du système linéaire / Résolution du système linéaire) / Calcul de l&#8217;estimateur / Marquage des cellules / Raffinement du maillage</p>
+</li>
+<li>
+<p>AddNet : Interpolation de laputheta / Dérives fenicsx / Interpolation de f / Calcul de l&#8217;estimateur / Marquage des cellules / Raffinement du maillage</p>
+</li>
+</ul>
+</div>
 <div class="imageblock">
 <div class="content">
-<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement/normH1/convergence_H1.png" alt="convergence H1" width="640.0" height="500.0">
+<img src="../../../_images/adaptmesh/testcase1_version4/meshrefinement_v2/fenicsx/times_ndofs.png" alt="times ndofs" width="960.0" height="750.0">
 </div>
 </div>
 </div>
