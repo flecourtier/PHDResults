@@ -126,10 +126,13 @@
     <a class="nav-link" href="refinement_v2.html">Meshrefinement - 30/04/2025</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="meshrefinement_v2/pytorch.html">Dérivées pytorch</a>
+    <a class="nav-link" href="meshrefinement_v2/order_pytorch_der2.html">Ordre 2</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="meshrefinement_v2/fenicsx.html">Dérivées fenicsx</a>
+    <a class="nav-link" href="meshrefinement_v2/order_pytorch_der1.html">Ordre 1</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="meshrefinement_v2/order_pytorch_der0.html">Ordre 0</a>
   </li>
 </ul>
   </li>
@@ -282,44 +285,51 @@ title="Fullscreen mode"
 \[R = \Delta u_h + f_h \quad \text{ et } \quad J = [\nabla u_h \cdot n]\]
 </div>
 </div>
+<div class="paragraph">
+<p>En plus des courbes de convergence, on va ausi s&#8217;intéresser aux temps de calculs.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_approche_additive"><a class="anchor" href="#_approche_additive"></a>2. Approche additive</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>On considère le même estimateur résiduel local que précédemment mais dans le contexte de l&#8217;approche additive, donc pour le couple \((p_h^{+},f_h + \Delta u_\theta)\), on a :</p>
+<p>On va alors considérer trois approches pour le calcul de \((\Delta u_\theta)_h\) :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Evaluation des dérivées du réseau directement avec pytorch : \(I_h^{(2)} \Delta u_\theta\)</p>
+</li>
+<li>
+<p>Evaluation des dérivées premières du réseau avec pytorch, puis dérivées secondes avec FEniCSx : \(\nabla\cdot \big(I_h^{(3)} \nabla u_\theta\big)\)</p>
+</li>
+<li>
+<p>Evaluation du réseau avec pytorch, puis dérivées avec FEniCSx : \(\Delta I_h^{(4)} u_\theta\)</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_standard"><a class="anchor" href="#_standard"></a>2.1. Standard</h3>
+<div class="paragraph">
+<p>On considère le même estimateur résiduel local que précédemment mais dans le contexte de l&#8217;approche additive, donc pour le couple \(\big(p_h^{+},f_h + (\Delta u_\theta)_h\big)\), on a :</p>
 </div>
 <div class="stemblock">
 <div class="content">
-\[R = \Delta p_h^{+} + \big(f_h + \Delta u_\theta\big) \quad \text{ et } \quad J = [\nabla p_h^{+} \cdot n]\]
+\[R = \Delta p_h^{+} + \big(f_h + (\Delta u_\theta)_h\big) \quad \text{ et } \quad J = [\nabla p_h^{+} \cdot n]\]
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_approche_additive_network"><a class="anchor" href="#_approche_additive_network"></a>3. Approche additive - Network</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_network"><a class="anchor" href="#_network"></a>2.2. Network</h3>
 <div class="paragraph">
-<p>On considère toujours le même estimateur résiduel local que précédemment mais dans le contexte de l&#8217;approche additive et sans résolution de système linéaire (en interpolant directement le réseau), donc pour le couple \((I_h u_\theta,f_h)\), on a (pas de saut) :</p>
+<p>On considère toujours le même estimateur résiduel local que précédemment mais dans le contexte de l&#8217;approche additive et sans résolution de système linéaire (en interpolant uniquement le réseau, et sans saut), donc pour le couple \(\big((\Delta u_\theta)_h,f_h\big)\), on a :</p>
 </div>
 <div class="stemblock">
 <div class="content">
 \[R = \Delta I_h u_\theta + f_h \quad \text{ et } \quad J = 0\]
 </div>
 </div>
-<div class="paragraph">
-<p>En plus des courbes de convergence, on va ausi s&#8217;intéresser aux temps de calculs. On va alors considérer deux approches :</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Evaluation des dérivées du réseau directement avec pytorch</p>
-</li>
-<li>
-<p>Evaluation des dérivées premières du réseau avec pytorch, puis dérivées secondes avec FEniCSx</p>
-</li>
-</ul>
 </div>
 </div>
 </div>
