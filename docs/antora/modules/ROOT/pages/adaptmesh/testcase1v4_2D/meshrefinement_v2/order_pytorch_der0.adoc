@@ -1,13 +1,13 @@
-# Dérivées pytorch
+# Ordre 0 - stem:[\Delta I_h^{(4)} u_\theta]
 
-Dans cette version, on évalue le laplacien du réseau directement avec pytorch, sur les dofs P2 du maillage courrant.
+Dans cette version, on évalue le réseau avec pytorch sur les dofs P4, puis dérivées avec FEniCSx.
 
 ## Convergence en norme L2 + Ratio temps/erreur
 
 [cols="a,a"]
 |===
-|image::adaptmesh/testcase1_version4/meshrefinement_v2/pytorch/cvg.png[width=640.0,height=500.0]
-|image::adaptmesh/testcase1_version4/meshrefinement_v2/pytorch/times_errors.png[width=640.0,height=500.0]
+|image::adaptmesh/testcase1_version4/meshrefinement_v2/order_pytorch_der0/convergence.png[width=640.0,height=500.0]
+|image::adaptmesh/testcase1_version4/meshrefinement_v2/order_pytorch_der0/times_errors.png[width=640.0,height=500.0]
 |===
 
 ## Analyse des temps de calcul
@@ -18,4 +18,4 @@ Dans cette version, on évalue le laplacien du réseau directement avec pytorch,
 
 * AddNet : Interpolation de laputheta / Interpolation de f / Calcul de l'estimateur / Marquage des cellules / Raffinement du maillage
 
-image::adaptmesh/testcase1_version4/meshrefinement_v2/pytorch/times_ndofs.png[width=960.0,height=750.0]
+image::adaptmesh/testcase1_version4/meshrefinement_v2/order_pytorch_der0/times_ndofs.png[width=960.0,height=750.0]

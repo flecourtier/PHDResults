@@ -18,25 +18,30 @@ Si stem:[u_h] est la solution approchée du problème de Poisson par la méthode
 R = \Delta u_h + f_h \quad \text{ et } \quad J = [\nabla u_h \cdot n]
 ++++
 
+En plus des courbes de convergence, on va ausi s'intéresser aux temps de calculs. 
+
 ## Approche additive
 
-On considère le même estimateur résiduel local que précédemment mais dans le contexte de l'approche additive, donc pour le couple stem:[(p_h^{+},f_h + \Delta u_\theta)], on a :
+On va alors considérer trois approches pour le calcul de stem:[(\Delta u_\theta)_h] :
+
+* Evaluation des dérivées du réseau directement avec pytorch : stem:[I_h^{(2)} \Delta u_\theta] 
+* Evaluation des dérivées premières du réseau avec pytorch, puis dérivées secondes avec FEniCSx : stem:[\nabla\cdot \big(I_h^{(3)} \nabla u_\theta\big)]
+* Evaluation du réseau avec pytorch, puis dérivées avec FEniCSx : stem:[\Delta I_h^{(4)} u_\theta]
+
+### Standard 
+
+On considère le même estimateur résiduel local que précédemment mais dans le contexte de l'approche additive, donc pour le couple stem:[\big(p_h^{+},f_h + (\Delta u_\theta)_h\big)], on a :
 
 [stem]
 ++++
-R = \Delta p_h^{+} + \big(f_h + \Delta u_\theta\big) \quad \text{ et } \quad J = [\nabla p_h^{+} \cdot n]
+R = \Delta p_h^{+} + \big(f_h + (\Delta u_\theta)_h\big) \quad \text{ et } \quad J = [\nabla p_h^{+} \cdot n]
 ++++
 
-## Approche additive - Network
+### Network
 
-On considère toujours le même estimateur résiduel local que précédemment mais dans le contexte de l'approche additive et sans résolution de système linéaire (en interpolant directement le réseau), donc pour le couple stem:[(I_h u_\theta,f_h)], on a (pas de saut) :
+On considère toujours le même estimateur résiduel local que précédemment mais dans le contexte de l'approche additive et sans résolution de système linéaire (en interpolant uniquement le réseau, et sans saut), donc pour le couple stem:[\big((\Delta u_\theta)_h,f_h\big)], on a :
 
 [stem]
 ++++
 R = \Delta I_h u_\theta + f_h \quad \text{ et } \quad J = 0
 ++++
-
-En plus des courbes de convergence, on va ausi s'intéresser aux temps de calculs. On va alors considérer deux approches :
-
-* Evaluation des dérivées du réseau directement avec pytorch
-* Evaluation des dérivées premières du réseau avec pytorch, puis dérivées secondes avec FEniCSx

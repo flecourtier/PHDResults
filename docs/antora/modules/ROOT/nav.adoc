@@ -11,8 +11,9 @@
 *** xref:adaptmesh/testcase1v4_2D/meshrefinement_v1/markingH1.adoc[Marking - H1]
 *** xref:adaptmesh/testcase1v4_2D/meshrefinement_v1/cvg.adoc[Convergence]
 ** xref:adaptmesh/testcase1v4_2D/refinement_v2.adoc[Meshrefinement - 30/04/2025]
-*** xref:adaptmesh/testcase1v4_2D/meshrefinement_v2/pytorch.adoc[Dérivées pytorch]
-*** xref:adaptmesh/testcase1v4_2D/meshrefinement_v2/fenicsx.adoc[Dérivées fenicsx]
+*** xref:adaptmesh/testcase1v4_2D/meshrefinement_v2/order_pytorch_der2.adoc[Ordre 2]
+*** xref:adaptmesh/testcase1v4_2D/meshrefinement_v2/order_pytorch_der1.adoc[Ordre 1]
+*** xref:adaptmesh/testcase1v4_2D/meshrefinement_v2/order_pytorch_der0.adoc[Ordre 0]
 
 .xref:nonlinear.adoc[Non linear problems]
 * xref:nonlinear/testcase.adoc[TestCase]
