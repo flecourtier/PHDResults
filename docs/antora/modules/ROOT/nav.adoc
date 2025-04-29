@@ -16,8 +16,11 @@
 *** xref:adaptmesh/testcase1v4_2D/meshrefinement_v2/order_pytorch_der0.adoc[Ordre 0]
 
 .xref:nonlinear.adoc[Non linear problems]
-* xref:nonlinear/testcase.adoc[TestCase]
-* xref:nonlinear/cvg.adoc[Error estimates]
+* xref:nonlinear/testcase3v1_2D/testcase.adoc[TestCase - V1]
+** xref:nonlinear/testcase3v1_2D/cvg.adoc[Error estimates]
+* xref:nonlinear/testcase3v2_2D/testcase.adoc[TestCase - V2]
+** xref:nonlinear/testcase3v2_2D/cvg.adoc[Error estimates]
+** xref:nonlinear/testcase3v2_2D/times.adoc[Times]
 
 .xref:runtime.adoc[Execution time]
 * xref:runtime/start.adoc[Start]
