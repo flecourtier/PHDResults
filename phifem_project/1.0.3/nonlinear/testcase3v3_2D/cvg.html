@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Cas test : Carré + Non Linear Poisson + Dirichlet (basse fréquence) :: PhiFEM Project - Docs</title>
-    <link rel="canonical" href="https://flecourtier.github.io/PHDResults/phifem_project/1.0.3/nonlinear/testcase3v2_2D/testcase.html">
+    <title>Error estimates :: PhiFEM Project - Docs</title>
+    <link rel="canonical" href="https://flecourtier.github.io/PHDResults/phifem_project/1.0.3/nonlinear/testcase3v3_2D/cvg.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="icon" href="../../../../_/img/favicon.ico" type="image/x-icon">
@@ -153,11 +153,14 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="testcase.html">TestCase - V2</a>
+    <a class="nav-link" href="testcase.html">TestCase - V3</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="plot.html">Plots</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="cvg.html">Error estimates</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -215,7 +218,8 @@
   <ul>
     <li><a href="../../main_page.html">Phi-FEM PhD</a></li>
     <li><a href="../../nonlinear.html">Non linear problems</a></li>
-    <li><a href="testcase.html">TestCase - V2</a></li>
+    <li><a href="testcase.html">TestCase - V3</a></li>
+    <li><a href="cvg.html">Error estimates</a></li>
   </ul>
 </nav>
 
@@ -242,7 +246,7 @@
 
     <a href="https://github.com/flecourtier/PHDResults">Open repository <i class="fab fa-github"></i></a>
     
-  <a href="https://github.com/flecourtier/PHDResults/edit/main/docs/antora/modules/ROOT/pages/nonlinear/testcase3v2_2D/testcase.adoc">Edit this Page <i class="fas fa-edit"></i></a>
+  <a href="https://github.com/flecourtier/PHDResults/edit/main/docs/antora/modules/ROOT/pages/nonlinear/testcase3v3_2D/cvg.adoc">Edit this Page <i class="fas fa-edit"></i></a>
 
     <a href="https://github.com/feelpp/book.feelpp.org/issues/new">Open issue <i class="fas fa-lightbulb"></i></a>
 
@@ -272,33 +276,65 @@ title="Fullscreen mode"
 </aside>
 
 <article class="doc">
-<h1 class="page">Cas test : Carré + Non Linear Poisson + Dirichlet (basse fréquence)</h1>
-<div class="paragraph">
-<p>On considère un problème non-linéaire de Poisson avec condition de Dirichlet défini par</p>
-</div>
-<div class="stemblock">
+<h1 class="page">Error estimates</h1>
+<div class="sect1">
+<h2 id="_plot_of_the_error_estimates"><a class="anchor" href="#_plot_of_the_error_estimates"></a>1. Plot of the error estimates</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-\[\left\{
-\begin{aligned}
--\nabla \big(q(u)\nabla u\big) &amp;= f, \; &amp;&amp;\text{dans } \; \Omega, \\
-u&amp;=0, \; &amp;&amp;\text{sur } \; \Gamma.
-\end{aligned}
-\right.\]
+<img src="../../_images/nonlinear/testcase3_version3/cvg/FEM-Corr_case3_v3_param1.png" alt="FEM Corr case3 v3 param1" width="600.0" height="150.0">
 </div>
-</div>
-<div class="paragraph">
-<p>avec \(q(u)=1+4u^4\) et \(\Omega = [-0.5 \pi, 0.5 \pi]^2\).</p>
-</div>
-<div class="paragraph">
-<p>On considèrera pour ce cas test la solution analytique \(u_{ex}\) défini par</p>
-</div>
-<div class="stemblock">
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-\[u_{ex}(x,y)=\exp\left(-\frac{(x-\mu_1)^2+(y-\mu_2)^2}{2}\right)\sin(2x)\sin(2y)\]
+<img src="../../_images/nonlinear/testcase3_version3/cvg/FEM-FEMInit_case3_v3_param1.png" alt="FEM FEMInit case3 v3 param1" width="600.0" height="150.0">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_gains_1_set_of_parameters"><a class="anchor" href="#_gains_1_set_of_parameters"></a>2. Gains (1 set of parameters)</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>homogène sur \(\Omega\) et \(\mu_1,\mu_2\sim\mathcal{U}(-0.5, 0.5)\).</p>
+<p>Degree : 1, 2, 3</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/nonlinear/testcase3_version3/cvg/Tab_case3_v3_param1_degree1.png" alt="Tab case3 v3 param1 degree1" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/nonlinear/testcase3_version3/cvg/Tab_case3_v3_param1_degree2.png" alt="Tab case3 v3 param1 degree2" width="640.0" height="500.0">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../../_images/nonlinear/testcase3_version3/cvg/Tab_case3_v3_param1_degree3.png" alt="Tab case3 v3 param1 degree3" width="640.0" height="500.0">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </article>
   </div>
