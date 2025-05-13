@@ -18,9 +18,10 @@
 .xref:nonlinear.adoc[Non linear problems]
 * xref:nonlinear/testcase3v1_2D/testcase.adoc[TestCase - V1]
 ** xref:nonlinear/testcase3v1_2D/cvg.adoc[Error estimates]
-* xref:nonlinear/testcase3v2_2D/testcase.adoc[TestCase - V2]
-** xref:nonlinear/testcase3v2_2D/cvg.adoc[Error estimates]
-** xref:nonlinear/testcase3v2_2D/times.adoc[Times]
+* xref:nonlinear/testcase3v3_2D/testcase.adoc[TestCase - V3]
+** xref:nonlinear/testcase3v3_2D/plot.adoc[Plots]
+** xref:nonlinear/testcase3v3_2D/cvg.adoc[Error estimates]
+** xref:nonlinear/testcase3v3_2D/times.adoc[Times]
 
 .xref:runtime.adoc[Execution time]
 * xref:runtime/start.adoc[Start]

@@ -1,0 +1,45 @@
+# Times
+:nonlinear: nonlinear/testcase3_version3/times/
+
+## FEM
+
+Degré 1 :
+
+image::{nonlinear}FEM_case3_v3_param1_degree1_times.png[width=600.0,height=150.0]
+
+Degré 2 :
+
+image::{nonlinear}FEM_case3_v3_param1_degree2_times.png[width=600.0,height=150.0]
+
+Degré 3 :
+
+image::{nonlinear}FEM_case3_v3_param1_degree3_times.png[width=600.0,height=150.0]
+
+## FEM Init
+
+Degré 1 :
+
+image::{nonlinear}FEMInit_case3_v3_param1_degree1_times.png[width=600.0,height=150.0]
+
+Degré 2 :
+
+image::{nonlinear}FEMInit_case3_v3_param1_degree2_times.png[width=600.0,height=150.0]
+
+Degré 3 :
+
+image::{nonlinear}FEMInit_case3_v3_param1_degree3_times.png[width=600.0,height=150.0]
+
+
+## Add
+
+Degré 1 :
+
+image::{nonlinear}Corr_case3_v3_param1_degree1_times.png[width=600.0,height=150.0]
+
+Degré 2 :
+
+image::{nonlinear}Corr_case3_v3_param1_degree2_times.png[width=600.0,height=150.0]
+
+Degré 3 :
+
+image::{nonlinear}Corr_case3_v3_param1_degree3_times.png[width=600.0,height=150.0]

@@ -1,0 +1,11 @@
+# Plots
+:nonlinear: nonlinear/testcase3_version3/plot/
+
+[stem]
+++++
+\mu = (0.05,0.22)
+++++
+
+image::{nonlinear}error_PINN.png[width=900.0,height=150.0]
+
+image::{nonlinear}rhs.png[width=300.0,height=150.0]
